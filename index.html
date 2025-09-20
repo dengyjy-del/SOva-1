@@ -97,7 +97,7 @@
             -webkit-overflow-scrolling: touch;
             padding-right: 8px;
             margin-right: -8px;
-            padding-bottom: 120px; /* Увеличенный отступ для нижней панели */
+            padding-bottom: 120px;
         }
         
         .content-section {
@@ -163,10 +163,10 @@
             height: 60px;
             width: 90%;
             max-width: 400px;
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.5); /* Увеличение прозрачности */
             border-radius: 30px;
-            backdrop-filter: blur(40px);
-            -webkit-backdrop-filter: blur(40px);
+            backdrop-filter: blur(10px); /* Уменьшение размытия */
+            -webkit-backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.5);
             padding: 0 16px;
             box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.05);
@@ -179,7 +179,7 @@
         }
 
         .nav-item {
-            color: #ffffff;
+            color: #1a1a1a; /* Изменено на темный цвет */
             font-size: 12px;
             text-align: center;
             display: flex;
@@ -199,7 +199,7 @@
         .nav-icon {
             height: 24px;
             width: 24px;
-            fill: #ffffff;
+            fill: #1a1a1a; /* Изменено на темный цвет */
             margin-bottom: 4px;
         }
         
