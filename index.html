@@ -161,25 +161,25 @@
             justify-content: space-around;
             align-items: center;
             height: 60px;
-            width: 90%;
+            width: 80%; /* Сделал немного уже */
             max-width: 400px;
-            background: rgba(255, 255, 255, 0.5); /* Увеличение прозрачности */
+            background: rgba(255, 255, 255, 0.5);
             border-radius: 30px;
-            backdrop-filter: blur(10px); /* Уменьшение размытия */
+            backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.5);
             padding: 0 16px;
             box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.05);
             
             position: fixed;
-            bottom: 24px;
+            bottom: 50px; /* Сместил ниже */
             left: 50%;
             transform: translateX(-50%);
             z-index: 10;
         }
 
         .nav-item {
-            color: #1a1a1a; /* Изменено на темный цвет */
+            color: #1a1a1a;
             font-size: 12px;
             text-align: center;
             display: flex;
@@ -199,7 +199,7 @@
         .nav-icon {
             height: 24px;
             width: 24px;
-            fill: #1a1a1a; /* Изменено на темный цвет */
+            fill: #1a1a1a;
             margin-bottom: 4px;
         }
         
@@ -320,6 +320,20 @@
         document.addEventListener('DOMContentLoaded', () => {
             const navItems = document.querySelectorAll('.nav-item');
             const contentSections = document.querySelectorAll('.content-section');
+
+            // Find the active section and activate its nav item on page load
+            const activeSectionId = window.location.hash.substring(1) || 'home';
+            const initialActiveNav = document.querySelector(`.nav-item[data-target="${activeSectionId}"]`);
+            if (initialActiveNav) {
+                initialActiveNav.classList.add('active');
+            }
+            const initialActiveSection = document.getElementById(activeSectionId);
+            if (initialActiveSection) {
+                initialActiveSection.classList.add('active');
+            } else {
+                // Default to home if hash is invalid
+                document.getElementById('home').classList.add('active');
+            }
 
             navItems.forEach(item => {
                 item.addEventListener('click', (e) => {
